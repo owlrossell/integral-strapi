@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payment_plans",
+  "info": {
+    "singularName": "payment-plan",
+    "pluralName": "payment-plans",
+    "displayName": "paymentPlan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "detail": {
+      "type": "json",
+      "required": true
+    },
+    "cycle": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cycle.cycle",
+      "inversedBy": "payment_plans"
+    }
+  }
+}
